@@ -32,6 +32,9 @@ class  Bookmark(models.Model):
 
 	tags = models.ManyToManyField(Tag, blank=True)
 
+	objects = models.Manager()
+	public = PublicBookmarkManager()
+
 	class Meta:
 		verbose_name = 'bookmark'
 		verbose_name_plural = 'bookmarks'
