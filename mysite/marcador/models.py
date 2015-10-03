@@ -5,7 +5,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.timezone import now
 
 # Create your models here.
-@python_2_unicode_compatible
+
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
@@ -16,6 +16,10 @@ class Tag(models.Model):
 
         def __str__(self):
             return self.name
+class PublicBookmarkManager(models.Manager):
+	def get_queryset(self):
+		qs = super(PublicBookmarkManager, self).get_queryset()
+		return qs.filter(is_public=True)
 
 class  Bookmark(models.Model):
 	url = models.URLField()
@@ -25,7 +29,7 @@ class  Bookmark(models.Model):
 	date_created = models.DateTimeField('date created')
 	date_updated = models.DateTimeField('date updated')
 	owner = models.ForeignKey(User, verbose_name='owner', related_name='bookmarks')
-		
+
 	tags = models.ManyToManyField(Tag, blank=True)
 
 	class Meta:
@@ -35,7 +39,7 @@ class  Bookmark(models.Model):
 
 		def __str__(self):
 			return '%s (%s)' % (self.title, self.url)
-			 def save(self, *args, **kwargs):
+			def save(self, *args, **kwargs):
 			 	if not self.id:
 			 		self.date_created = now()
 			 		self.date_updated = now()
