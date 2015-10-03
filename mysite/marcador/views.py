@@ -12,7 +12,7 @@ def bookmark_list(request):
 
 
     def bookmark_user(request, username):
-    user = get_object_or_404(User, username=username)
+        user = get_object_or_404(User, username=username)
     if request.user == user:
         bookmarks = user.bookmarks.all()
     else:
