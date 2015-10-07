@@ -28,5 +28,14 @@ def index(request):
 	return render(request,'index.html', context)
 
 def feedback(request):
-	return render(request,'feedback.html',context)
+
+	form = FeedbackForm(request.POST or None)
+	if form. is_valid():
+		for key, value in form.cleaned_data.items():
+			print(key, value)
+	context = {
+	"form":form
+	}
+
+	return render(request, 'feedback.html', context)
 
