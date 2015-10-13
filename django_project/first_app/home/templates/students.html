@@ -21,6 +21,7 @@
 
 <table class="table">
     <tr>
+    <th></th>
     <th>Fullname</th>
     <th>Age</th>
     <th>Email</th>
@@ -31,6 +32,7 @@
 
         {% for student in students%}
         <tr>
+        <td>{{forloop.counter}}</td>
         <td>{{student.full_name}}</td>
         <td>{{student.age}}</td>
         <td>{{student.email}}</td>
