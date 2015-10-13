@@ -48,5 +48,5 @@ def feedback(request):
 
 def students(request):
 	context = {} 
-	return render(request, 'feedback.html', context)
+	return render(request, 'students.html', context)
 
