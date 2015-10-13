@@ -25,6 +25,7 @@
     <th>Age</th>
     <th>Email</th>
     <th>Interests</th>
+    <th>Last update</th>
     </tr>
 
 
@@ -33,7 +34,8 @@
         <td>{{student.full_name}}</td>
         <td>{{student.age}}</td>
         <td>{{student.email}}</td>
-        <td>{{student.inerests}}</td>
+        <td>{{student.interests}}</td>
+        <td>{{student.last_update | timesince}}</td>
         </tr>
 
         {% endfor %}
