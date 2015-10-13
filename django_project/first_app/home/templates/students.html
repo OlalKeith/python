@@ -18,6 +18,18 @@
     <![endif]-->
   </head>
 <body>
+        {% for student in students%}
+            {{student.full_name}}
+        {% endfor %}
+
+<table class="table">
+    <tr><th>Fullname</th></tr>
+    <tr><th>Age</th></tr>
+    <tr><th>Email</th></tr>
+    <tr><th>Interests</th></tr>
+    <tr><th>Data</th></tr>
+</table>
+
         <p>{{students}}</p>
 </body>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
