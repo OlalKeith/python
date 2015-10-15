@@ -39,6 +39,8 @@ EMAIL_USE_TLS = True
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'registration',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -112,3 +114,6 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "assets", "static_prod")
 
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "assets", "static"),)
+
+ACCOUNT_ACTIVATION_DAYS = 7# One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = TrueTrue # Automatically log the user in.
