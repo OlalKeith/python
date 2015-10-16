@@ -65,7 +65,7 @@ ROOT_URLCONF = 'first_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +117,4 @@ STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "assets", "static"),)
 
 ACCOUNT_ACTIVATION_DAYS = 7# One-week activation window; you may, of course, use a different value.
-REGISTRATION_AUTO_LOGIN = TrueTrue # Automatically log the user in.
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
