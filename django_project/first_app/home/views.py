@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 def index(request):
 
 	context ={}
-	return render(request,'bootstrap_index.html', context)
+	return render(request,'home.html', context)
 
 
 def register(request):

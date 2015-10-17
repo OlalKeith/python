@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title>Students form</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -32,16 +32,18 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/students">students</a></li>
+            <li role="presentation"><a href="/feedback">Contact</a></li>
           </ul>
         </nav>
         <h3 class="text-muted">Olals project</h3>
       </div>
 
+      {% block content %}
+      put something here!
 
-
+      {% endblock %}
 
       <footer class="footer">
         <p>&copy; Company 2014</p>
