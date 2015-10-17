@@ -6,7 +6,11 @@ from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
-	form = StudentForm(request.POST or None)
+		return render(request,'index.html', context)
+
+def register(request):
+
+		form = StudentForm(request.POST or None)
 
 	context = {
 		"hello_message": "Register new Student",
@@ -29,8 +33,8 @@ def index(request):
 
 	return render(request,'index.html', context)
 
+	
 def feedback(request):
-
 	form = FeedbackForm(request.POST or None)
 	if form. is_valid():
 		from_email = form.cleaned_data.get('email')
